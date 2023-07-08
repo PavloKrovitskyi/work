@@ -1802,8 +1802,8 @@ body {
 }
 
 .video-page__wrapper-button-play {
-  width: 4.2%;
-  height: 7.5%;
+  width: 3.125rem;
+  height: 3.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1811,7 +1811,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   z-index: 2;
   -webkit-transform: translate(-50%, -50%);
