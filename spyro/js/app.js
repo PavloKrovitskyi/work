@@ -3655,7 +3655,7 @@
         iframe.style.display = "none";
     }));
     video.addEventListener("pause", (() => {
-        playButton.style.display = "block";
+        playButton.style.display = "none";
     }));
     video.addEventListener("play", (() => {
         playButton.style.display = "none";
