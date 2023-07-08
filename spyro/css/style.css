@@ -1819,6 +1819,7 @@ body {
           transform: translate(-50%, -50%);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  pointer-events: none;
 }
 
 .video-page__button-play {
