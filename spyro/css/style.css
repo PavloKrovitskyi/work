@@ -813,7 +813,7 @@ body {
 }
 
 .workout-item__image::before {
-  top: 50%;
+  top: 52%;
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -824,7 +824,7 @@ body {
 }
 
 .workout-item__image::after {
-  bottom: 50%;
+  bottom: 52%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(139, 139, 139, 0.4)), to(rgba(0, 0, 0, 0.005)));
   background: linear-gradient(180deg, rgba(139, 139, 139, 0.4) 0%, rgba(0, 0, 0, 0.005) 100%);
   -webkit-transition: bottom 0.4s;
@@ -2825,6 +2825,20 @@ body {
 
   .spollers {
     padding-bottom: 3.125rem;
+  }
+
+  .spollers__title._spoller-active + .spollers__wrapper-body {
+    padding: 0;
+  }
+
+  .spollers__body {
+    padding: 0.625rem 0.625rem;
+  }
+
+  .spollers__body::before {
+    -webkit-transform: skew(-5deg);
+        -ms-transform: skew(-5deg);
+            transform: skew(-5deg);
   }
 
   .trial-block__body {
