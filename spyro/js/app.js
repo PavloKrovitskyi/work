@@ -3641,6 +3641,7 @@
             text.classList.add("text-open");
         }));
     }));
+    const playButtonWrapper = document.querySelector(".video-page__wrapper-button-play");
     const playButton = document.querySelector(".video-page__button-play");
     const video = document.querySelector(".video-page__download-video");
     const iframe = document.querySelector("iframe");
@@ -3655,10 +3656,12 @@
         iframe.style.display = "none";
     }));
     video.addEventListener("pause", (() => {
-        playButton.style.display = "none";
+        playButton.style.display = "block";
+        playButtonWrapper.style.display = "block";
     }));
     video.addEventListener("play", (() => {
         playButton.style.display = "none";
+        playButtonWrapper.style.display = "none";
     }));
     window["FLS"] = true;
     isWebp();
