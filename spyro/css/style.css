@@ -784,8 +784,6 @@ body {
   height: auto;
   visibility: visible;
   opacity: 1;
-  -webkit-transition: width 1s;
-  transition: width 1s;
 }
 
 .workout-item__image {
@@ -809,7 +807,7 @@ body {
 .workout-item__image::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 101%;
   height: 50%;
   left: 0;
   z-index: 1;
@@ -906,12 +904,12 @@ body {
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
-  width: 50%;
+  width: 0;
   height: 0;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
 }
 
 .lifestyle {
@@ -2945,7 +2943,6 @@ body {
   }
 
   .workout-item__text.text-open {
-    width: 100%;
     visibility: visible;
     opacity: 1;
     width: auto;
