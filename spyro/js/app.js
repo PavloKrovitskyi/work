@@ -3385,6 +3385,7 @@
             observeParents: true,
             autoHeight: false,
             speed: 800,
+            loop: true,
             pagination: {
                 el: ".feedback__pagination",
                 clickable: true
@@ -3653,6 +3654,7 @@
     playButton.addEventListener("click", (() => {
         video.play();
         playButton.style.display = "none";
+        playButtonWrapper.style.display = "none";
         iframe.style.display = "none";
     }));
     video.addEventListener("pause", (() => {
