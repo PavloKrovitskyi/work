@@ -1065,11 +1065,13 @@ body {
 }
 
 .no-webp .classes{
-  background: url("../img/classes/bg-image.jpg") 50% 50% no-repeat; }
+  background-image: url("../img/classes/bg-image.jpg"); }
 
 .classes {
   padding-top: 2.5rem;
   padding-bottom: 2.875rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   background-size: cover;
 }
 
@@ -3301,6 +3303,6 @@ body {
   }
 }
 
-.webp .classes{ background: url(../img/classes/bg-image.webp) 50% 50% no-repeat; }
+.webp .classes{ background-image: url(../img/classes/bg-image.webp); }
 
 .webp .feedback{ background: url(../img/classes/bg-image.webp) 50% 50% no-repeat; }
