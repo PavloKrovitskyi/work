@@ -1127,8 +1127,8 @@ body::after {
   font-weight: 700;
 }
 
-.item-question__title summary::-webkit-details-marker,
-.item-question__title summary::marker {
+.item-question summary::-webkit-details-marker,
+.item-question summary::marker {
   display: none;
   font-size: 0;
 }
