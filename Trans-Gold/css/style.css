@@ -1029,6 +1029,7 @@ body::after {
   -webkit-column-gap: 1.875rem;
      -moz-column-gap: 1.875rem;
           column-gap: 1.875rem;
+  row-gap: 0.625rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
