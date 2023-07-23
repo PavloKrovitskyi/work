@@ -393,7 +393,6 @@ body::after {
 
 .page {
   padding-top: 4.375rem;
-  padding-bottom: 4.375rem;
 }
 
 .logo {
@@ -412,6 +411,10 @@ body::after {
 .logo img {
   width: 3.4375rem;
   height: 3.4375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -648,17 +651,32 @@ body::after {
   border-radius: 50%;
 }
 
-.no-webp .main-block{
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(47, 52, 58, 0.75)), to(rgba(47, 52, 58, 0.75))), url("../img/main-block/main1.jpg") center, lightgray 50%/cover no-repeat; }
-
-.no-webp .main-block{
-  background: linear-gradient(0deg, rgba(47, 52, 58, 0.75) 0%, rgba(47, 52, 58, 0.75) 100%), url("../img/main-block/main1.jpg") center, lightgray 50%/cover no-repeat; }
-
 .main-block {
-  padding: 3.125rem 0;
+  padding-bottom: 3.125rem;
+  position: relative;
+}
+
+.main-block::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(47, 52, 58, 0.75);
+  z-index: 1;
+}
+
+.main-block__image-bg-ibg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .main-block__container {
+  padding-top: 3.125rem;
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1162,8 +1180,8 @@ body::after {
 }
 
 .contacts {
-  padding: 3.125rem 0;
-  background-color: rgb(77, 77, 77);
+  padding: 0rem 0 3.125rem;
+  background-color: rgb(0, 0, 0);
 }
 
 .contacts__title:not(:last-child) {
@@ -1299,6 +1317,10 @@ body::after {
 .social-contacts__item img {
   width: 3.75rem;
   height: 3.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .social-contacts__item::before {
@@ -1330,7 +1352,7 @@ body::after {
 
 .tik-tok::before {
   content: "";
-  background-color: white;
+  background-color: rgb(209, 208, 208);
 }
 
 .facebook::before {
@@ -1592,7 +1614,11 @@ body::after {
   }
 
   .main-block {
-    padding: 6.25rem 0;
+    padding-bottom: 6.25rem;
+  }
+
+  .main-block__container {
+    padding-top: 6.25rem;
   }
 
   .main-block__body {
@@ -1655,7 +1681,7 @@ body::after {
   }
 
   .contacts {
-    padding: 5rem 0;
+    padding: 0.3125rem 0 5rem;
   }
 
   .choose-us__body {
@@ -2048,7 +2074,3 @@ body::after {
     background-color: rgba(200, 163, 95, 0.5);
   }
 }
-
-.webp .main-block{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(47, 52, 58, 0.75)), to(rgba(47, 52, 58, 0.75))), url(../img/main-block/main1.webp) center, lightgray 50%/cover no-repeat; }
-
-.webp .main-block{ background: linear-gradient(0deg, rgba(47, 52, 58, 0.75) 0%, rgba(47, 52, 58, 0.75) 100%), url(../img/main-block/main1.webp) center, lightgray 50%/cover no-repeat; }
