@@ -135,6 +135,12 @@ body {
   font-size: 1.25rem;
 }
 
+.spollers__item summary::-webkit-details-marker,
+.spollers__item summary::marker {
+  display: none;
+  font-size: 0;
+}
+
 .spollers__title {
   width: 100%;
   cursor: default;
