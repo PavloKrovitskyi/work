@@ -3642,29 +3642,6 @@
             text.classList.add("text-open");
         }));
     }));
-    const playButtonWrapper = document.querySelector(".video-page__wrapper-button-play");
-    const playButton = document.querySelector(".video-page__button-play");
-    const video = document.querySelector(".video-page__download-video");
-    const iframe = document.querySelector("iframe");
-    video.volume = .5;
-    video.addEventListener("ended", (() => {
-        iframe.style.display = "block";
-        playButton.style.display = "none";
-    }));
-    playButton.addEventListener("click", (() => {
-        video.play();
-        playButton.style.display = "none";
-        playButtonWrapper.style.display = "none";
-        iframe.style.display = "none";
-    }));
-    video.addEventListener("pause", (() => {
-        playButton.style.display = "block";
-        playButtonWrapper.style.display = "block";
-    }));
-    video.addEventListener("play", (() => {
-        playButton.style.display = "none";
-        playButtonWrapper.style.display = "none";
-    }));
     window["FLS"] = true;
     isWebp();
     addLoadedClass();
