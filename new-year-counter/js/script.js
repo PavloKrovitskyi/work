@@ -36,14 +36,47 @@ timers.forEach(function (timer) {
   requestAnimationFrame(updateTimer);
 });
 // ================================================
-var audio = document.getElementById('myAudio');
-var button = document.getElementById('play-btn');
+var audios = Array.from(document.querySelectorAll('.hero__audio'));
+var backButton = document.getElementById('back-btn');
+var playButton = document.getElementById('play-btn');
+var nextButton = document.getElementById('next-btn');
+var currentAudioIndex = 0;
 
-button.addEventListener('click', function () {
-  if (audio.paused) {
-    audio.play();
+backButton.addEventListener('click', function () {
+  audios[currentAudioIndex].pause();
+  currentAudioIndex--;
+  if (currentAudioIndex < 0) {
+    currentAudioIndex = audios.length - 1;
+  }
+  audios[currentAudioIndex].currentTime = 0; // Починаємо відтворення з початку
+  audios[currentAudioIndex].play();
+});
+
+playButton.addEventListener('click', function () {
+  if (audios[currentAudioIndex].paused) {
+    audios[currentAudioIndex].play();
   } else {
-    audio.pause();
+    audios[currentAudioIndex].pause();
   }
 });
-audio.volume = 0.3; // Встановлюємо гучність на 50%
+
+nextButton.addEventListener('click', function () {
+  audios[currentAudioIndex].pause();
+  currentAudioIndex++;
+  if (currentAudioIndex >= audios.length) {
+    currentAudioIndex = 0;
+  }
+  audios[currentAudioIndex].currentTime = 0; // Починаємо відтворення з початку
+  audios[currentAudioIndex].play();
+});
+
+audios.forEach(function (audio, index) {
+  audio.addEventListener('ended', function () {
+    currentAudioIndex++;
+    if (currentAudioIndex < audios.length) {
+      audios[currentAudioIndex].currentTime = 0; // Починаємо відтворення з початку
+      audios[currentAudioIndex].play();
+    }
+  });
+  audio.volume = 0.3; // Встановлюємо гучність на 30%
+});

@@ -23,10 +23,18 @@
           <div class="hero__content">
             <h1 class="hero__title">до нового року залишилось:</h1>
             <div class="hero__timer" data-timer data-end="Dec 31, 2023 23:59:59"></div>
-            <audio id="myAudio" autoplay>
+            <audio class="hero__audio" id="myAudio" autoplay>
+              <source src="files/andy-williams-its-the-most-wonderful-time-of-the-year.mp3" type="audio/mpeg">
+            </audio>
+            <audio class="hero__audio" autoplay>
               <source src="files/mariah-carey-all-i-want-for-christmas-is-you.mp3" type="audio/mpeg">
             </audio>
-            <button type="button" id="play-btn" class="hero__button">Натисни для настрою <img src="img/magic.png" alt=""></button>
+
+            <div class="hero__buttons">
+              <button type="button" id="back-btn" class="hero__button">back<img src="img/magic.png" alt=""></button>
+              <button type="button" id="play-btn" class="hero__button">Натисни для настрою <img src="img/magic.png" alt=""></button>
+              <button type="button" id="next-btn" class="hero__button"><img src="img/magic.png" alt="">next</button>
+            </div>
           </div>
         </div>
       </div>
