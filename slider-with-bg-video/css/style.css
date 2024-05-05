@@ -150,11 +150,16 @@ html {
   padding-block: 12rem;
   row-gap: calc(var(--index-size) * 2.4);
   text-align: center;
-  opacity: 0;
   transition: opacity 0.25s ease;
 }
 .hero__slide.swiper-slide-active {
   opacity: 1;
+}
+.hero__slide.swiper-slide-prev {
+  opacity: 0;
+}
+.hero__slide.swiper-slide-next {
+  opacity: 0;
 }
 
 .hero__slide h2 {
