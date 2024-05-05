@@ -1,4 +1,10 @@
 let videoBg = document.querySelector('.hero__video-bg')
+videoBg.oncanplaythrough = function () {
+  console.log('Video can play through without stopping for buffering.');
+};
+videoBg.src = 'media/background-new.mp4';
+videoBg.load();
+
 const heroSwiper = new Swiper('.hero__slider', {
   speed: 1000,
   slidesPerView: 1,
