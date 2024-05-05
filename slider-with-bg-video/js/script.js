@@ -1,6 +1,7 @@
 const videoBg = document.querySelector('.hero__video-bg')
 const heroSwiper = new Swiper('.hero__slider', {
   speed: 1000,
+  slidesPerView: 1,
   keyboard: {
     enabled: true,
     onlyInViewport: true,
