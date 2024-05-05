@@ -1,4 +1,4 @@
-const videoBg = document.querySelector('.hero__video-bg')
+let videoBg = document.querySelector('.hero__video-bg')
 const heroSwiper = new Swiper('.hero__slider', {
   speed: 1000,
   slidesPerView: 1,
@@ -18,20 +18,28 @@ const heroSwiper = new Swiper('.hero__slider', {
 })
 
 heroSwiper.on('slideChange', function () {
-  gsap.to(videoBg, 1, {
-    currentTime: (videoBg.duration / (this.slides.length - 1)) * this.realIndex,
-  })
+  if (window.innerWidth > 980) {
+    gsap.to(videoBg, 1, {
+      currentTime: (videoBg.duration / (this.slides.length - 1)) * this.realIndex,
+    });
+    heroSwiper.on('slideChangeTransitionStart', function () {
+      videoBg.classList.add('change-slide')
+    })
+    heroSwiper.on('slideChangeTransitionEnd', function () {
+      videoBg.classList.remove('change-slide')
+    })
+  }
 });
 
-heroSwiper.on('slideChangeTransitionStart', function () {
-  videoBg.classList.add('change-slide')
-})
-heroSwiper.on('slideChangeTransitionEnd', function () {
-  videoBg.classList.remove('change-slide')
-})
+if (window.innerWidth < 980) {
+  videoBg = document.querySelector('.hero__mob-video-bg')
+  videoBg.loop = true; // встановлюємо безкінечне повторення
+  videoBg.autoplay = true; // встановлюємо автопрогравання
+  videoBg.play(); // починаємо відтворення
+}
 
 
-//========================================================================================================================================================
+//======================================================================================================================================================
 document.addEventListener("click", function (e) {
   const targetElement = e.target;
 
