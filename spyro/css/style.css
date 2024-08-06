@@ -355,6 +355,7 @@ body {
   line-height: normal;
   background: -webkit-gradient(linear, left top, right top, from(#ff4300), to(#ff6400));
   background: linear-gradient(to right, #ff4300, #ff6400);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -362,6 +363,8 @@ body {
 }
 
 .section-title {
+  font-size: clamp(1.875rem, 1.466rem + 2.05vw, 3rem);
+  /*48>30*/
   font-style: normal;
   font-weight: 600;
   line-height: 1.21;
@@ -399,6 +402,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: clamp(3.75rem, 2.386rem + 6.82vw, 7.5rem);
+  /*120>60*/
   -webkit-transition: min-height 0.3s;
   transition: min-height 0.3s;
 }
@@ -551,6 +556,11 @@ body {
   min-height: 100%;
 }
 
+.page__main-block:not(:last-child) {
+  margin-bottom: clamp(1.25rem, -0.568rem + 9.09vw, 6.25rem);
+  /*100>20*/
+}
+
 .main-block {
   position: relative;
   height: 100vh;
@@ -600,6 +610,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  padding-block: clamp(5rem, 3.864rem + 5.68vw, 8.125rem);
+  /*130>80*/
 }
 
 .main-block__body {
@@ -622,6 +634,8 @@ body {
 }
 
 .main-block__title {
+  font-size: clamp(1.875rem, 1.102rem + 3.86vw, 4rem);
+  /*64>30*/
   font-family: "Orbitron";
   font-style: normal;
   font-weight: 700;
@@ -720,6 +734,10 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   height: 100%;
+  -webkit-column-gap: clamp(0.625rem, -0.511rem + 5.68vw, 3.75rem);
+     -moz-column-gap: clamp(0.625rem, -0.511rem + 5.68vw, 3.75rem);
+          column-gap: clamp(0.625rem, -0.511rem + 5.68vw, 3.75rem);
+  /*60>10*/
   -webkit-transform: translateX(50%);
       -ms-transform: translateX(50%);
           transform: translateX(50%);
@@ -764,6 +782,11 @@ body {
   transition: all 1s;
   cursor: pointer;
   height: 100%;
+}
+
+.workout-item.card-open {
+  min-width: clamp(11.25rem, -8.393rem + 52.38vw, 31.875rem);
+  /*510>180 W-1230>600*/
 }
 
 .workout-item.card-open .workout-item__image {
@@ -871,6 +894,8 @@ body {
 
 .workout-item__title,
 .workout-item__title-image {
+  font-size: clamp(1.25rem, -1.467rem + 4.35vw, 1.875rem);
+  /*30>20*/
   font-style: normal;
   font-weight: 400;
   line-height: 1.21;
@@ -879,12 +904,10 @@ body {
 }
 
 .workout-item__title-image {
-  position: relative;
-  z-index: 5;
-  width: 100%;
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  width: 100%;
   z-index: 2;
   padding: 0.5rem;
 }
@@ -906,16 +929,25 @@ body {
 }
 
 .workout-item__text {
+  width: 0;
+  height: 0;
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
-  width: 0;
-  height: 0;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.8s;
   transition: opacity 0.8s;
+}
+
+.workout-item__text.text-open {
+  visibility: visible;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  -ms-grid-column-span: 4;
+  grid-column: span 4;
 }
 
 .lifestyle {
@@ -1074,8 +1106,7 @@ body {
   background-image: url("../img/classes/bg-image.jpg"); }
 
 .classes {
-  padding-top: 2.5rem;
-  padding-bottom: 2.875rem;
+  padding-block: 3.75rem;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -1089,9 +1120,8 @@ body {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.125rem, 1fr));
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 3.125rem;
+  gap: clamp(0.625rem, -0.254rem + 4.4vw, 3.125rem);
+  /*50>10*/
   -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
   transition: opacity 0.4s, -webkit-transform 0.4s;
   transition: transform 0.4s, opacity 0.4s;
@@ -1121,7 +1151,7 @@ body {
   padding: 0.625rem 4rem;
   min-height: 2.8125rem;
   margin: 0 auto;
-  margin-top: 3.125rem;
+  margin-top: 1.625rem;
   opacity: 0;
   -webkit-transform: scale(2);
       -ms-transform: scale(2);
@@ -1426,6 +1456,13 @@ body {
   transition: all 0.4s;
 }
 
+.instructors {
+  padding-top: clamp(3.125rem, 2.443rem + 3.41vw, 5rem);
+  /*80>55*/
+  padding-bottom: clamp(3.75rem, 2.841rem + 4.55vw, 6.25rem);
+  /*100>60*/
+}
+
 .instructors__title:not(:last-child) {
   margin-bottom: 2.25rem;
 }
@@ -1535,7 +1572,7 @@ body {
 
 .download-app {
   padding-top: 0.9375rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.75rem;
   background: -webkit-gradient(linear, left top, right top, from(#ff4300), to(#ff6400));
   background: linear-gradient(90deg, #ff4300 0%, #ff6400 100%);
 }
@@ -1784,12 +1821,39 @@ body {
   transition: transform 0.3s, opacity 0.4s, -webkit-transform 0.3s;
 }
 
-.video-page__wrapper {
-  position: relative;
-  aspect-ratio: 16/9;
+.video-page {
+  padding-top: clamp(1.875rem, 0.337rem + 7.69vw, 6.25rem);
+  /*100>30*/
 }
 
-.video-page__wrapper iframe {
+.video-page__container {
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+
+._watcher-view .video-page__container {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.video-page__video {
+  position: relative;
+  min-height: calc(100svh - 5.375rem);
+}
+
+.video-page__video iframe,
+.video-page__video video {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1798,6 +1862,152 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 2;
+}
+
+.video-page__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  translate: -50% -50%;
+  width: 3.75rem;
+  height: 3.75rem;
+  -webkit-animation: heartbeat 2s ease-in-out infinite both;
+          animation: heartbeat 2s ease-in-out infinite both;
+}
+
+.video-page__play-button.pause svg {
+  fill: #ff4300;
+}
+
+.video-page__play-button.play {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.video-page__play-button svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  fill: #ffffff;
+  -webkit-transition: visibility 0.3s, fill 0.4s;
+  transition: visibility 0.3s, fill 0.4s;
+}
+
+.video-page__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  -webkit-transform: skewX(-20deg);
+      -ms-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+  translate: -50% -50%;
+  visibility: hidden;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
+}
+
+.video-page__button span {
+  -webkit-transform: skewX(20deg);
+      -ms-transform: skewX(20deg);
+          transform: skewX(20deg);
+  display: inline-block;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+
+  10% {
+    scale: 0.95;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+
+  15% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  27% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+
+  43% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  55% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+
+  15% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  27% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+
+  43% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+
+  55% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
 }
 
 .no-webp .feedback{
@@ -2059,12 +2269,12 @@ body {
 
 .spollers__title {
   display: inline-block;
-  font-size: 1.5rem;
+  padding: 1rem 2.8125rem 1rem 0.5rem;
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.7);
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0.03rem;
-  padding: 1rem 2.8125rem 1rem 1.75rem;
-  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.7);
 }
 
 .spollers__title._spoller-active + .spollers__wrapper-body {
@@ -2078,6 +2288,8 @@ body {
 .spollers__body {
   padding: 2.5rem 3.75rem;
   position: relative;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 .spollers__body::before {
@@ -2125,6 +2337,8 @@ body {
 }
 
 .trial-block__title {
+  font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+  /*40>20*/
   font-style: normal;
   font-weight: 600;
   line-height: 1.6;
@@ -2287,15 +2501,29 @@ body {
     min-width: 24.375rem;
     min-height: 17.5rem;
   }
+
+  .spollers__title {
+    padding: 1rem 2.8125rem 1rem 1.75rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 47.99875em) {
+  .classes__btn-all {
+    margin-top: 3.125rem;
+  }
+
   .download-app {
     padding-bottom: 1.25rem;
   }
 
   .download-app__info {
     min-height: 29.875rem;
+  }
+
+  .video-page__play-button {
+    width: 5.625rem;
+    height: 5.625rem;
   }
 
   .question__body {
@@ -2314,72 +2542,11 @@ body {
   }
 }
 
-@media (min-width: 62.5em) {
-  .workout-item.card-open {
-    min-width: 31.875rem;
-  }
-}
-
 @media (min-width: 76.875em) {
-  .section-title {
-    font-size: 3rem;
-  }
-
-  .header__container {
-    min-height: 7.5rem;
-  }
-
-  .page__main-block:not(:last-child) {
-    margin-bottom: 6.25rem;
-  }
-
-  .main-block__container {
-    padding-top: 8.125rem;
-  }
-
-  .main-block__container {
-    padding-bottom: 8.125rem;
-  }
-
-  .main-block__title {
-    font-size: 4rem;
-  }
-
-  .workout-options__items {
-    -webkit-column-gap: 3.75rem;
-       -moz-column-gap: 3.75rem;
-            column-gap: 3.75rem;
-  }
-
-  .workout-item__title,
-  .workout-item__title-image {
-    font-size: 2rem;
-  }
-
-  .classes__items {
-    gap: 3.125rem;
-  }
-
-  .instructors {
-    padding-top: 5rem;
-  }
-
-  .instructors {
-    padding-bottom: 6.25rem;
-  }
-
-  .video-page {
-    padding-top: 6.25rem;
-  }
-
   .feedback__text {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-  }
-
-  .trial-block__title {
-    font-size: 2.5rem;
   }
 }
 
@@ -2393,64 +2560,8 @@ body {
   }
 }
 
-@media (max-width: 20em) {
-  .section-title {
-    font-size: 1.875rem;
-  }
-
-  .header__container {
-    min-height: 3.75rem;
-  }
-
-  .page__main-block:not(:last-child) {
-    margin-bottom: 1.25rem;
-  }
-
-  .main-block__container {
-    padding-top: 5rem;
-  }
-
-  .main-block__container {
-    padding-bottom: 5rem;
-  }
-
-  .main-block__title {
-    font-size: 1.875rem;
-  }
-
-  .workout-options__items {
-    -webkit-column-gap: 0.625rem;
-       -moz-column-gap: 0.625rem;
-            column-gap: 0.625rem;
-  }
-
-  .workout-item.card-open {
-    min-width: 11.25rem;
-  }
-
-  .classes__items {
-    gap: 1.25rem;
-  }
-
-  .instructors {
-    padding-top: 2.1875rem;
-  }
-
-  .instructors {
-    padding-bottom: 3.125rem;
-  }
-
-  .video-page {
-    padding-top: 1.875rem;
-  }
-
-  .trial-block__title {
-    font-size: 1.25rem;
-  }
-}
-
 @media (max-width: 76.87375em) {
-  .video-page__wrapper {
+  .video-page__video {
     margin: 0 -0.9375rem;
   }
 
@@ -2480,47 +2591,15 @@ body {
   }
 }
 
-@media (max-width: 62.5em) {
-  .workout-item__title,
-  .workout-item__title-image {
-    font-size: 1.25rem;
-  }
-}
-
 @media (max-width: 61.99875em) {
-  .main-block__title {
-    line-height: 1.3;
-  }
-}
-
-@media (max-width: 59.375em) {
-  .workout-item__title-image {
-    display: none;
-  }
-}
-
-@media (max-width: 47.99875em) {
-  .header__logo {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-  }
-
   .menu__body {
     position: fixed;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    padding-top: 8.75rem;
+    padding-bottom: 1.875rem;
     -webkit-transition: left 0.4s;
     transition: left 0.4s;
     overflow: auto;
@@ -2533,6 +2612,8 @@ body {
     top: -100%;
     left: 0;
     width: 100%;
+    height: clamp(4.375rem, 3.239rem + 5.68vw, 7.5rem);
+    /*120>70*/
     background-color: rgb(99, 99, 99);
     -webkit-transition: top 0.4s;
     transition: top 0.4s;
@@ -2554,6 +2635,8 @@ body {
             flex-direction: column;
     row-gap: 3.125rem;
     width: 100%;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .menu__item {
@@ -2617,6 +2700,30 @@ body {
             transform: rotate(45deg);
   }
 
+  .main-block__title {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 61.99875em) and (any-hover: none) {
+  .icon-menu {
+    cursor: default;
+  }
+}
+
+@media (max-width: 59.375em) {
+  .workout-item__title-image {
+    display: none;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .header__logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+
   .footer {
     padding-top: 1.875rem;
   }
@@ -2635,6 +2742,10 @@ body {
 
   .workout-item.card-open .workout-item__image {
     border-radius: 3.125rem 0 0 0;
+  }
+
+  .workout-item__image {
+    height: 18.75rem;
   }
 
   .workout-item__body {
@@ -2667,7 +2778,7 @@ body {
   }
 
   .download-app {
-    padding-top: 1.25rem;
+    padding-top: 1.875rem;
   }
 
   .download-app__container {
@@ -2759,18 +2870,6 @@ body {
   }
 }
 
-@media (max-width: 47.99875em) and (max-width: 20em) {
-  .menu__body::before {
-    height: 4.375rem;
-  }
-}
-
-@media (max-width: 47.99875em) and (any-hover: none) {
-  .icon-menu {
-    cursor: default;
-  }
-}
-
 @media (max-width: 47.99875em) and (max-width: 29.99875em) {
   .download-app__image-ibg img {
     -o-object-fit: cover;
@@ -2815,21 +2914,8 @@ body {
     max-width: 100vw;
   }
 
-  .workout-item__image {
-    height: 18.75rem;
-  }
-
   .workout-item__text {
     font-size: 0.875rem;
-  }
-
-  .workout-item__text.text-open {
-    visibility: visible;
-    opacity: 1;
-    width: auto;
-    height: auto;
-    -ms-grid-column-span: 4;
-    grid-column: span 4;
   }
 
   .lifestyle__image {
@@ -2844,206 +2930,6 @@ body {
   .feedback__slide {
     padding: 1.875rem 1.25rem;
   }
-}
-
-@media (min-width: 20em) and (max-width: 76.875em) {
-@supports (font-size: clamp( 1.875rem , 1.4793956044rem  +  1.978021978vw , 3rem )) {
-    .section-title {
-      font-size: clamp( 1.875rem , 1.4793956044rem  +  1.978021978vw , 3rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.875rem , 1.4793956044rem  +  1.978021978vw , 3rem )) {
-    .section-title {
-      font-size: calc(1.875rem + 1.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (min-height: clamp( 3.75rem , 2.4313186813rem  +  6.5934065934vw , 7.5rem )) {
-    .header__container {
-      min-height: clamp( 3.75rem , 2.4313186813rem  +  6.5934065934vw , 7.5rem );
-    }
-}
-
-@supports not (min-height: clamp( 3.75rem , 2.4313186813rem  +  6.5934065934vw , 7.5rem )) {
-    .header__container {
-      min-height: calc(3.75rem + 3.75 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (margin-bottom: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem )) {
-    .page__main-block:not(:last-child) {
-      margin-bottom: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem );
-    }
-}
-
-@supports not (margin-bottom: clamp( 1.25rem , -0.5082417582rem  +  8.7912087912vw , 6.25rem )) {
-    .page__main-block:not(:last-child) {
-      margin-bottom: calc(1.25rem + 5 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
-    .main-block__container {
-      padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem );
-    }
-}
-
-@supports not (padding-top: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
-    .main-block__container {
-      padding-top: calc(5rem + 3.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (padding-bottom: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
-    .main-block__container {
-      padding-bottom: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 5rem , 3.9010989011rem  +  5.4945054945vw , 8.125rem )) {
-    .main-block__container {
-      padding-bottom: calc(5rem + 3.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (font-size: clamp( 1.875rem , 1.1277472527rem  +  3.7362637363vw , 4rem )) {
-    .main-block__title {
-      font-size: clamp( 1.875rem , 1.1277472527rem  +  3.7362637363vw , 4rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.875rem , 1.1277472527rem  +  3.7362637363vw , 4rem )) {
-    .main-block__title {
-      font-size: calc(1.875rem + 2.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports ((-moz-column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem )) or (column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem ))) {
-    .workout-options__items {
-      -webkit-column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem );
-         -moz-column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem );
-              column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem );
-    }
-}
-
-@supports not ((-moz-column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem )) or (column-gap: clamp( 0.625rem , -0.4739010989rem  +  5.4945054945vw , 3.75rem ))) {
-    .workout-options__items {
-      -webkit-column-gap: calc(0.625rem + 3.125 * (100vw - 20rem) / 56.875);
-         -moz-column-gap: calc(0.625rem + 3.125 * (100vw - 20rem) / 56.875);
-              column-gap: calc(0.625rem + 3.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (gap: clamp( 1.25rem , 0.5906593407rem  +  3.2967032967vw , 3.125rem )) {
-    .classes__items {
-      gap: clamp( 1.25rem , 0.5906593407rem  +  3.2967032967vw , 3.125rem );
-    }
-}
-
-@supports not (gap: clamp( 1.25rem , 0.5906593407rem  +  3.2967032967vw , 3.125rem )) {
-    .classes__items {
-      gap: calc(1.25rem + 1.875 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (padding-top: clamp( 2.1875rem , 1.198489011rem  +  4.9450549451vw , 5rem )) {
-    .instructors {
-      padding-top: clamp( 2.1875rem , 1.198489011rem  +  4.9450549451vw , 5rem );
-    }
-}
-
-@supports not (padding-top: clamp( 2.1875rem , 1.198489011rem  +  4.9450549451vw , 5rem )) {
-    .instructors {
-      padding-top: calc(2.1875rem + 2.8125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (padding-bottom: clamp( 3.125rem , 2.0260989011rem  +  5.4945054945vw , 6.25rem )) {
-    .instructors {
-      padding-bottom: clamp( 3.125rem , 2.0260989011rem  +  5.4945054945vw , 6.25rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 3.125rem , 2.0260989011rem  +  5.4945054945vw , 6.25rem )) {
-    .instructors {
-      padding-bottom: calc(3.125rem + 3.125 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (padding-top: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
-    .video-page {
-      padding-top: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem );
-    }
-}
-
-@supports not (padding-top: clamp( 1.875rem , 0.3365384615rem  +  7.6923076923vw , 6.25rem )) {
-    .video-page {
-      padding-top: calc(1.875rem + 4.375 * (100vw - 20rem) / 56.875);
-    }
-}
-
-@supports (font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
-    .trial-block__title {
-      font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
-    .trial-block__title {
-      font-size: calc(1.25rem + 1.25 * (100vw - 20rem) / 56.875);
-    }
-}
-}
-
-@media (max-width: 47.99875em) and (min-width: 76.875em) {
-  .menu__body::before {
-    height: 7.5rem;
-  }
-}
-
-@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 76.875em) {
-@supports (height: clamp( 4.375rem , 3.2760989011rem  +  5.4945054945vw , 7.5rem )) {
-    .menu__body::before {
-      height: clamp( 4.375rem , 3.2760989011rem  +  5.4945054945vw , 7.5rem );
-    }
-}
-
-@supports not (height: clamp( 4.375rem , 3.2760989011rem  +  5.4945054945vw , 7.5rem )) {
-    .menu__body::before {
-      height: calc(4.375rem + 3.125 * (100vw - 20rem) / 56.875);
-    }
-}
-}
-
-@media (min-width: 20em) and (max-width: 62.5em) {
-@supports (min-width: clamp( 11.25rem , 1.5441176471rem  +  48.5294117647vw , 31.875rem )) {
-    .workout-item.card-open {
-      min-width: clamp( 11.25rem , 1.5441176471rem  +  48.5294117647vw , 31.875rem );
-    }
-}
-
-@supports not (min-width: clamp( 11.25rem , 1.5441176471rem  +  48.5294117647vw , 31.875rem )) {
-    .workout-item.card-open {
-      min-width: calc(11.25rem + 20.625 * (100vw - 20rem) / 42.5);
-    }
-}
-}
-
-@media (min-width: 62.5em) and (max-width: 76.875em) {
-@supports (font-size: clamp( 1.25rem , -2.0108695652rem  +  5.2173913043vw , 2rem )) {
-    .workout-item__title,
-    .workout-item__title-image {
-      font-size: clamp( 1.25rem , -2.0108695652rem  +  5.2173913043vw , 2rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.25rem , -2.0108695652rem  +  5.2173913043vw , 2rem )) {
-    .workout-item__title,
-    .workout-item__title-image {
-      font-size: calc(1.25rem + 0.75 * (100vw - 62.5rem) / 14.375);
-    }
-}
 }
 
 @media (any-hover: hover) {
@@ -3162,6 +3048,10 @@ body {
   .download-app__button:hover::after {
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
+  }
+
+  .video-page__play-button:hover svg {
+    fill: #ff4300;
   }
 
   .trial-block__link-button:hover::before {

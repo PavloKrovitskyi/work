@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230811115639">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240806234614">
 	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -16,13 +16,15 @@
 	<div class="wrapper">
 		<header data-scroll class="header">
 			<div class="header__container">
-				<a href="#" class="header__logo logo">SPYRO</a>
+				<a href="#" data-goto=".main-block" data-goto-header class="header__logo logo">SPYRO</a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">Classes</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Team</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="#" data-goto=".classes" data-goto-header class="menu__link">Classes</a></li>
+							<li class="menu__item"><a href="#" data-goto=".instructors" data-goto-header class="menu__link">Team</a></li>
+							<li class="menu__item"><a href="#" data-goto=".download-app" data-goto-header class="menu__link">App</a></li>
+							<li class="menu__item"><a href="#" data-goto=".video-page" data-goto-header class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="#" data-goto=".question" data-goto-header class="menu__link">FAQ</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -59,7 +61,7 @@
 							</div>
 							<div class="workout-item__body">
 								<h3 class="workout-item__title">GYM</h3>
-								<p data-da=".workout-options__items,479" id="text-card-1" class="workout-item__text">
+								<p data-da=".workout-options__items,767" id="text-card-1" class="workout-item__text">
 									Expect a heart-pumping workout that will leave you feeling energized and accomplished. Our supportive community of like-minded individuals.
 								</p>
 							</div>
@@ -72,7 +74,7 @@
 							</div>
 							<div class="workout-item__body">
 								<h3 class="workout-item__title">Zumba</h3>
-								<p data-da=".workout-options__items,479" id="text-card-2" class="workout-item__text">
+								<p data-da=".workout-options__items,767" id="text-card-2" class="workout-item__text">
 									Zumba is a complete, licensed fitness program that combines elements of cardio, muscle conditioning, balance, and flexibility. The choreography is mainly inspired by Latin dances such as salsa, merengue, cumbia, reggaeton, soca, samba, tango, and flamenco but also incorporates elements of belly dance and Quebradita ³. Zumba is a dynamic dance workout that effectively burns calories and has a positive impact on both the mind and body ⁴. It's a fun way to forget about the daily routine and release your inner energy!
 								</p>
 							</div>
@@ -85,7 +87,7 @@
 							</div>
 							<div class="workout-item__body">
 								<h3 class="workout-item__title">Yoga</h3>
-								<p data-da=".workout-options__items,479" id="text-card-3" class="workout-item__text">
+								<p data-da=".workout-options__items,767" id="text-card-3" class="workout-item__text">
 									Yoga improves flexibility, increasing the range of movement in tight places. It also helps strengthen the muscles and improve the balance. Yoga maintains joint health, facilitates and prevents back pain, and teaches better breathing.
 
 									In addition, yoga promotes mental rest, reduces stress and reduces the physical consequences of stress on the body. It also relieves pain and improves lung function, encouraging relaxation through respiratory practices known as pranayama.
@@ -100,7 +102,7 @@
 							</div>
 							<div class="workout-item__body">
 								<h3 class="workout-item__title">Martial Arts</h3>
-								<p data-da=".workout-options__items,479" id="text-card-4" class="workout-item__text text-open">
+								<p data-da=".workout-options__items,767" id="text-card-4" class="workout-item__text text-open">
 									Martial arts have many positive health effects. They improve cardiovascular health, increase flexibility, help lose weight and control blood pressure. Martial arts also improve reflexes and help to achieve a general healthy lifestyle. In addition, they can reduce stress and anxiety, promote the development of self -esteem and emotional stability.
 								</p>
 							</div>
@@ -341,7 +343,7 @@
 				</div>
 			</section>
 
-			<section data-watch data-watch-once data-watch-margin="-130px" class="page__download-app download-app">
+			<section data-watch data-watch-once data-watch-margin="-200px" class="page__download-app download-app">
 				<div class="download-app__container">
 					<div class="download-app__info">
 						<h3 class="download-app__title section-title">Download the most loved fitness app</h3>
@@ -361,17 +363,17 @@
 				</div>
 			</section>
 
-			<div class="page__video video-page">
+			<div data-watch data-watch-once data-watch-threshold="0.5" class="page__video video-page">
 				<div class="video-page__container">
-					<div class="video-page__wrapper">
-						<iframe class="video-page__video" src="https://www.youtube.com/embed/nvCrar6IvBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						<div class="video-page__wrapper-button-play">
-							<button data-watch data-watch-once data-watch-margin="-100px" type="button" class="video-page__button-play">
-								<svg>
-									<use xlink:href="img/icons/icons.svg#play"></use>
-								</svg>
-							</button>
-						</div>
+					<div class="video-page__video">
+						<video id="promo-video" src="files/video/promo-video.mp4" poster="img/video-block/poster-video.jpg" preload="metadata"></video>
+						<!-- <iframe class="video-page__video" src="https://www.youtube.com/embed/nvCrar6IvBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+						<button data-watch data-watch-once data-watch-margin="-100px" type="button" class="video-page__play-button">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#play"></use>
+							</svg>
+						</button>
+						<a href="/" class="video-page__button button-trail"><span>Start a free trail</span></a>
 					</div>
 				</div>
 			</div>
@@ -657,7 +659,7 @@
 		</footer>
 	</div>
 	<!-- Стилі для body -->
-	<link href="https://fonts.googleapis.com/css?family=Outfit:500&display=swap&_v=20230811115639" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Outfit:500&display=swap&_v=20240806234614" rel="stylesheet">
 	<style>
 		.lock body {
 			overflow: hidden;
@@ -810,7 +812,7 @@
 		</script>
 
 	</div>
-	<script src="js/app.min.js?_v=20230811115639"></script>
+	<script src="js/app.min.js?_v=20240806234614"></script>
 </body>
 
 </html>
