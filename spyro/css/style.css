@@ -1102,14 +1102,9 @@ body {
   left: -0.625rem;
 }
 
-.no-webp .classes{
-  background-image: url("../img/classes/bg-image.jpg"); }
-
 .classes {
   padding-block: 3.75rem;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
+  background: #303030 url("../img/classes/bg-image-hd.webp") 50% 50%/cover repeat-y;
 }
 
 .classes__title {
@@ -2010,12 +2005,10 @@ body {
   }
 }
 
-.no-webp .feedback{
-  background: url("../img/classes/bg-image.jpg") 50% 50% no-repeat; }
-
 .feedback {
   padding-top: 3.125rem;
   padding-bottom: 3.125rem;
+  background: #303030 url("../img/classes/bg-image-hd.webp") 50% 50%/cover no-repeat;
   background-size: cover;
 }
 
@@ -3066,7 +3059,3 @@ body {
     border: 0.1875rem solid rgb(255, 70, 1);
   }
 }
-
-.webp .classes{ background-image: url(../img/classes/bg-image.webp); }
-
-.webp .feedback{ background: url(../img/classes/bg-image.webp) 50% 50% no-repeat; }
