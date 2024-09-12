@@ -3745,16 +3745,12 @@
         playVideoButton.classList.add("play");
         playVideoButton.classList.remove("pause");
         videoTrialButton.style.visibility = "hidden";
-        promoVideo.style.filter = "blur(0Px)";
     }));
     promoVideo.addEventListener("pause", (() => {
-        playVideoButton.style.visibility = "visible";
         playVideoButton.classList.add("pause");
         playVideoButton.classList.remove("play");
-        promoVideo.style.filter = "blur(0Px)";
     }));
     promoVideo.addEventListener("ended", (() => {
-        playVideoButton.style.visibility = "hidden";
         videoTrialButton.style.visibility = "visible";
         promoVideo.style.filter = "blur(6Px)";
     }));
